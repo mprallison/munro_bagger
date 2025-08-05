@@ -35,17 +35,20 @@
                             function filterByColumnCellIds() {
                               const filter1 = document.getElementById("filterCol1").value;
                               const filter2 = document.getElementById("filterCol2").value;
+                              const filter3 = document.getElementById("filterCol3").value;
 
                               const rows = document.querySelectorAll("#mountainTable tbody tr");
 
                               rows.forEach(row => {
                                 const cell1 = row.cells[2]; 
                                 const cell2 = row.cells[3]; 
+                                const cell3 = row.cells[4]; 
 
                                 const matchCol1 = !filter1 || cell1.id === filter1;
                                 const matchCol2 = !filter2 || cell2.id === filter2;
+                                const matchCol3 = !filter3 || cell3.id === filter3;
 
-                                row.style.display = (matchCol1 && matchCol2) ? "" : "none";
+                                row.style.display = (matchCol1 && matchCol2 && matchCol3) ? "" : "none";
                               });
                             }   
                             </script>
@@ -79,6 +82,7 @@
                         <col style="width: 80px">
                         <col style="width: 160px">
                         <col style="width: 160px">
+                        <col style="width: 160px">
                         </colgroup>
                             <thead>
                                 <tr>
@@ -100,6 +104,14 @@
                                       <option value="gap">Gaps</option>
                                     </select>
                                     </th>
+
+                                    <th>Amy (35)
+                                    <select id="filterCol3" onchange="filterByColumnCellIds()">
+                                      <option value="">All</option>
+                                      <option value="bag">Bags</option>
+                                      <option value="gap">Gaps</option>
+                                    </select>
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -108,16 +120,19 @@
                             <td>1344m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "bag"> <img src="images/scott.png" width="64" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Ben Macdui [Beinn Macduibh]</td>
                             <td>1309m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Braeriach</td>
                             <td>1296m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -126,10 +141,12 @@
                             <td>1291m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgor an Lochain Uaine</td>
                             <td>1258m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -138,10 +155,12 @@
                             <td>1244m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Aonach Beag</td>
                             <td>1234m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -150,10 +169,12 @@
                             <td>1220m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Carn Mor Dearg</td>
                             <td>1220m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -162,10 +183,12 @@
                             <td>1214m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "bag"> <img src="images/scott.png" width="64" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn a' Bhuird [Beinn a' Bhuird North Top]</td>
                             <td>1196m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -174,10 +197,12 @@
                             <td>1182m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Carn Eighe</td>
                             <td>1182m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -186,10 +211,12 @@
                             <td>1179m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Stob Choire Claurigh</td>
                             <td>1177m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -198,10 +225,12 @@
                             <td>1173m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "bag"> <img src="images/scott.png" width="64" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Ben Avon - Leabaidh an Daimh Bhuidhe</td>
                             <td>1172m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -210,10 +239,12 @@
                             <td>1164m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn Bhrotain</td>
                             <td>1157m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -222,10 +253,12 @@
                             <td>1155m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Derry Cairngorm</td>
                             <td>1155m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -234,10 +267,12 @@
                             <td>1151m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgurr nan Ceathramhnan [Sgurr nan Ceathreamhnan]</td>
                             <td>1149m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -246,10 +281,12 @@
                             <td>1149m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Ben Alder</td>
                             <td>1148m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -258,10 +295,12 @@
                             <td>1132m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Ben Lui [Beinn Laoigh]</td>
                             <td>1131m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -270,16 +309,19 @@
                             <td>1130m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>An Riabhachan</td>
                             <td>1129m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Creag Meagaidh</td>
                             <td>1128m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -288,17 +330,20 @@
                             <td>1127m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Meall Garbh (Ben Lawers)</td>
                             <td>1123m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn a' Ghlo - Carn nan Gabhar</td>
                             <td>1121m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
@@ -306,16 +351,19 @@
                             <td>1120m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>An Stuc</td>
                             <td>1117m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Stob Coire an Laoigh</td>
                             <td>1116m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -324,10 +372,12 @@
                             <td>1115m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgor Gaoith</td>
                             <td>1116m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -336,10 +386,12 @@
                             <td>1115m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Monadh Mor</td>
                             <td>1113m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -348,10 +400,12 @@
                             <td>1112m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Carn a' Choire Bhoidheach</td>
                             <td>1109m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -360,10 +414,12 @@
                             <td>1109m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgurr Mor </td>
                             <td>1108m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -372,10 +428,12 @@
                             <td>1107m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Stob a' Choire Mheadhoin</td>
                             <td>1105m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -384,10 +442,12 @@
                             <td>1103m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn Eibhinn</td>
                             <td>1103m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -396,10 +456,12 @@
                             <td>1100m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Creise</td>
                             <td>1099m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -408,10 +470,12 @@
                             <td>1099m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgurr Choinnich Mor</td>
                             <td>1094m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -420,10 +484,12 @@
                             <td>1093m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Bynack More</td>
                             <td>1090m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -432,10 +498,12 @@
                             <td>1089m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn a' Chlachair</td>
                             <td>1087m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -444,10 +512,12 @@
                             <td>1084m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgurr a' Choire Ghlais</td>
                             <td>1083m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -456,10 +526,12 @@
                             <td>1083m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "bag"> <img src="images/scott.png" width="64" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn a' Chaorainn (Cairngorms)</td>
                             <td>1083m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -468,10 +540,12 @@
                             <td>1080m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Ben Starav</td>
                             <td>1079m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -480,10 +554,12 @@
                             <td>1077m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn Dorain</td>
                             <td>1076m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -492,16 +568,19 @@
                             <td>1072m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn a' Ghlo - Braigh Coire Chruinn-bhalgain</td>
                             <td>1070m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgurr Fhuaran</td>
                             <td>1068m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -510,28 +589,33 @@
                             <td>1069m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Glas Maol</td>
                             <td>1067m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Meall Corranaich</td>
                             <td>1067m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Cairn of Claise</td>
                             <td>1063m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>An Teallach - Bidein a' Ghlas Thuill</td>
                             <td>1062m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -540,10 +624,12 @@
                             <td>1058m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Liathach - Spidean a' Choire Leith</td>
                             <td>1054m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -552,10 +638,12 @@
                             <td>1054m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Toll Creagach</td>
                             <td>1053m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -564,10 +652,12 @@
                             <td>1053m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Stob Poite Coire Ardair</td>
                             <td>1052m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -576,10 +666,12 @@
                             <td>1051m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Geal Charn (Laggan)</td>
                             <td>1049m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -588,10 +680,12 @@
                             <td>1049m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgurr Fhuar-thuill</td>
                             <td>1049m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -600,10 +694,12 @@
                             <td>1047m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Creag Mhor</td>
                             <td>1046m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -612,10 +708,12 @@
                             <td>1046m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Ben Wyvis - Glas Leathad Mor</td>
                             <td>1046m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -624,16 +722,19 @@
                             <td>1045m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Stob Coir' an Albannaich</td>
                             <td>1044m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn Iutharn Mhor</td>
                             <td>1045m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -642,16 +743,19 @@
                             <td>1043m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Carn Mairg</td>
                             <td>1043m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgurr na Ciche</td>
                             <td>1040m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -660,10 +764,12 @@
                             <td>1039m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn Achaladair</td>
                             <td>1038m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -672,10 +778,12 @@
                             <td>1037m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgurr a' Bhealaich Dheirg</td>
                             <td>1036m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -684,10 +792,12 @@
                             <td>1035m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Carn Dearg (Loch Pattack)</td>
                             <td>1034m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -696,10 +806,12 @@
                             <td>1031m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn Fhada</td>
                             <td>1031m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -708,22 +820,26 @@
                             <td>1029m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Carn Gorm</td>
                             <td>1029m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Carn an Righ</td>
                             <td>1029m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgurr na Ciste Duibhe</td>
                             <td>1027m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -732,10 +848,12 @@
                             <td>1026m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn Challuim [Ben Challum]</td>
                             <td>1024m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -744,10 +862,12 @@
                             <td>1024m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Liathach - Mullach an Rathain</td>
                             <td>1023m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -756,10 +876,12 @@
                             <td>1021m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Ladhar Bheinn</td>
                             <td>1020m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -768,10 +890,12 @@
                             <td>1019m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn Bheoil</td>
                             <td>1019m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -780,10 +904,12 @@
                             <td>1018m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Mullach Clach a' Bhlair</td>
                             <td>1019m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -792,10 +918,12 @@
                             <td>1015m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Garbh Chioch Mhor</td>
                             <td>1012m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -804,10 +932,12 @@
                             <td>1012m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>The Saddle</td>
                             <td>1011m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -816,10 +946,12 @@
                             <td>1011m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgurr Eilde Mor</td>
                             <td>1010m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -828,10 +960,12 @@
                             <td>1010m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgurr an Doire Leathain</td>
                             <td>1010m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -840,10 +974,12 @@
                             <td>1010m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn Dearg (Blair Atholl)</td>
                             <td>1008m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -852,10 +988,12 @@
                             <td>1006m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>An Sgarsoch</td>
                             <td>1006m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -864,10 +1002,12 @@
                             <td>1006m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn Fhionnlaidh (Carn Eige</td>
                             <td>1004m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -876,10 +1016,12 @@
                             <td>1004m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn an Dothaidh</td>
                             <td>1004m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -888,10 +1030,12 @@
                             <td>1004m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgurr Mor (Loch Quoich)</td>
                             <td>1003m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -900,10 +1044,12 @@
                             <td>1002m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgurr na Carnach</td>
                             <td>1002m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -912,10 +1058,12 @@
                             <td>1001m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Aonach Meadhoin</td>
                             <td>1001m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -924,10 +1072,12 @@
                             <td>999m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgurr Breac</td>
                             <td>999m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -936,16 +1086,19 @@
                             <td>999m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Stob Daimh [Stob Diamh]</td>
                             <td>999m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sail Chaorainn</td>
                             <td>999m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -954,10 +1107,12 @@
                             <td>998m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>A' Chailleach (Fannaichs)</td>
                             <td>998m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -966,10 +1121,12 @@
                             <td>997m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Broad Cairn</td>
                             <td>997m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -978,10 +1135,12 @@
                             <td>995m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Spidean Mialach</td>
                             <td>995m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -990,10 +1149,12 @@
                             <td>994m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Carn an Fhidhleir [Carn Ealar]</td>
                             <td>994m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1002,10 +1163,12 @@
                             <td>993m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn Eighe - Spidean Coire nan Clach</td>
                             <td>993m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1014,10 +1177,12 @@
                             <td>992m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Carn nan Gobhar (Strathfarrar)</td>
                             <td>992m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1026,10 +1191,12 @@
                             <td>992m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgairneach Mhor</td>
                             <td>991m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1038,10 +1205,12 @@
                             <td>989m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgurr Ban</td>
                             <td>989m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1050,10 +1219,12 @@
                             <td>988m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Lurg Mhor</td>
                             <td>987m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1062,10 +1233,12 @@
                             <td>987m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Gulvain [Gaor Bheinn]</td>
                             <td>987m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1074,10 +1247,12 @@
                             <td>986m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgurr Dearg - Inaccessible Pinnacle</td>
                             <td>985m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1086,10 +1261,12 @@
                             <td>985m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "bag"> <img src="images/scott.png" width="64" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Druim Shionnach</td>
                             <td>985m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1098,10 +1275,12 @@
                             <td>982m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>An Gearanach</td>
                             <td>981m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1110,10 +1289,12 @@
                             <td>981m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Stob Coire a' Chairn</td>
                             <td>981m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1122,10 +1303,12 @@
                             <td>981m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Slioch</td>
                             <td>981m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1134,10 +1317,12 @@
                             <td>980m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn a' Chochuill</td>
                             <td>980m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1146,10 +1331,12 @@
                             <td>979m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn Dubhchraig</td>
                             <td>978m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1158,10 +1345,12 @@
                             <td>977m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Stob Ban (Grey Corries)</td>
                             <td>977m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1170,22 +1359,26 @@
                             <td>976m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Carn a' Gheoidh</td>
                             <td>976m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn a' Ghlo - Carn Liath</td>
                             <td>975m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn Sgritheall</td>
                             <td>974m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1194,10 +1387,12 @@
                             <td>973m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "bag"> <img src="images/scott.png" width="64" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>A' Mharconaich</td>
                             <td>973m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1206,10 +1401,12 @@
                             <td>973m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgurr a' Ghreadaidh</td>
                             <td>972m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1218,16 +1415,19 @@
                             <td>967m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Meall Garbh (Carn Mairg)</td>
                             <td>967m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgurr nan Gillean</td>
                             <td>966m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1236,10 +1436,12 @@
                             <td>965m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Ben More (Mull)</td>
                             <td>966m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1248,10 +1450,12 @@
                             <td>965m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Carn a' Chlamain</td>
                             <td>963m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1260,10 +1464,12 @@
                             <td>963m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Ben Klibreck - Meall nan Con</td>
                             <td>962m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1272,10 +1478,12 @@
                             <td>960m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Stuc an Lochain [Stuchd an Lochain]</td>
                             <td>959m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1284,10 +1492,12 @@
                             <td>959m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn Fhionnlaidh</td>
                             <td>959m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1296,10 +1506,12 @@
                             <td>959m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Bruach na Frithe</td>
                             <td>958m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1308,11 +1520,13 @@
                             <td>958m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Tolmount</td>
                             <td>957m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
@@ -1320,10 +1534,12 @@
                             <td>957m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgurr nan Coireachan (Glenfinnan)</td>
                             <td>956m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1332,10 +1548,12 @@
                             <td>956m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Saileag</td>
                             <td>956m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1344,10 +1562,12 @@
                             <td>954m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn Liath Mhor Fannaich</td>
                             <td>954m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1356,10 +1576,12 @@
                             <td>953m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Buachaille Etive Mor - Stob na Broige</td>
                             <td>953m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1368,10 +1590,12 @@
                             <td>953m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn Mhanach</td>
                             <td>952m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1380,10 +1604,12 @@
                             <td>952m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Meall Chuaich</td>
                             <td>950m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1392,10 +1618,12 @@
                             <td>949m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn Bhuidhe</td>
                             <td>948m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1404,16 +1632,19 @@
                             <td>948m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Driesh</td>
                             <td>947m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Creag a' Mhaim</td>
                             <td>946m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1422,16 +1653,19 @@
                             <td>946m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn Tulaichean</td>
                             <td>945m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Carn Dearg (Monadhliath)</td>
                             <td>945m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1440,10 +1674,12 @@
                             <td>945m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Carn Bhac</td>
                             <td>945m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1452,10 +1688,12 @@
                             <td>945m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Bidein a' Choire Sheasgaich</td>
                             <td>945m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1464,10 +1702,12 @@
                             <td>944m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Binnein Beag</td>
                             <td>943m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1476,10 +1716,12 @@
                             <td>942m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "bag"> <img src="images/scott.png" width="64" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>An Socach (Braemar)</td>
                             <td>942m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1488,10 +1730,12 @@
                             <td>941m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Carn Dearg (Corrour)</td>
                             <td>941m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1500,10 +1744,12 @@
                             <td>940m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Mullach nan Coirean</td>
                             <td>939m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1512,10 +1758,12 @@
                             <td>939m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Luinne Bheinn</td>
                             <td>938m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1524,10 +1772,12 @@
                             <td>937m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sron a' Choire Ghairbh</td>
                             <td>936m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1536,10 +1786,12 @@
                             <td>936m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn na Lap</td>
                             <td>935m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1548,10 +1800,12 @@
                             <td>933m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Meall a' Chrasgaidh</td>
                             <td>934m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1560,16 +1814,19 @@
                             <td>934m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>The Cairnwell</td>
                             <td>933m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "bag"> <img src="images/scott.png" width="64" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Maol Chean-dearg</td>
                             <td>933m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1578,16 +1835,19 @@
                             <td>933m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn Chabhair</td>
                             <td>932m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Meall Buidhe (Glen Lyon)</td>
                             <td>932m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1596,10 +1856,12 @@
                             <td>930m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn Bhreac</td>
                             <td>930m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1608,16 +1870,19 @@
                             <td>929m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Mayar</td>
                             <td>928m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Blabheinn [Bla Bheinn]</td>
                             <td>928m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1626,16 +1891,19 @@
                             <td>928m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn Narnain</td>
                             <td>926m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Eididh nan Clach Geala</td>
                             <td>927m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1644,10 +1912,12 @@
                             <td>927m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Geal Charn (Monadh Liath)</td>
                             <td>926m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1656,10 +1926,12 @@
                             <td>926m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn Liath Mhor</td>
                             <td>926m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1668,16 +1940,19 @@
                             <td>926m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Meall a' Choire Leith</td>
                             <td>925m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Moruisg</td>
                             <td>925m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1686,10 +1961,12 @@
                             <td>924m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Creag Pitridh</td>
                             <td>924m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1698,10 +1975,12 @@
                             <td>924m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgurr nan Each</td>
                             <td>923m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1710,10 +1989,12 @@
                             <td>922m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgiath Chuil</td>
                             <td>920m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1722,10 +2003,12 @@
                             <td>920m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>An Socach (Affric)</td>
                             <td>919m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1734,10 +2017,12 @@
                             <td>918m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Ruadh Stac Mor</td>
                             <td>918m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1746,10 +2031,12 @@
                             <td>918m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Sgurr a' Mhadaidh</td>
                             <td>918m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1758,10 +2045,12 @@
                             <td>917m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Creag nan Damh</td>
                             <td>917m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1770,10 +2059,12 @@
                             <td>916m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn a' Chleibh</td>
                             <td>916m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
@@ -1782,16 +2073,19 @@
                             <td>915m</td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Carn Aosda</td>
                             <td>915m</td>
                             <td id = "bag"> <img src="images/matthew.png" width="64" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
+                            <td id = "bag"> <img src="images/amy.png" width="64" height="80"></td>
                           </tr>
                           <tr>
                             <td>Beinn Teallach</td>
                             <td>914m</td>
+                            <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                             <td id = "gap"> <img src="images/peak.png" width="80" height="80"></td>
                           </tr>
